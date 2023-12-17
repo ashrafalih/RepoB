@@ -1,0 +1,15 @@
+name: test
+on:
+  workflow_call:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v3
+      with:
+        repository: ashrafalih/RepoB
+        ref: mian
+        path: workflows      
+    - name: Run a python script located in repoB
+      run: ls 
