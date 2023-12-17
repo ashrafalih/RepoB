@@ -1,6 +1,8 @@
 name: test
+
 on:
   workflow_call:
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -9,7 +11,8 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: ashrafalih/RepoB
-        ref: mian
-        path: workflows      
+        ref: main
+        path: workflows
+        token: ${{ secrets.PAT_TOKEN }}
     - name: Run a python script located in repoB
-      run: ls 
+      run: ls
