@@ -6,9 +6,9 @@ on:
       config-path:
         required: true
         type: string
-    secrets:
-      PAT_TOKEN:
-        required: true
+    # secrets:
+    #   PAT_TOKEN:
+    #     required: true
 
 jobs:
   triage:
@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        # PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         config-path: ${{ inputs.config-path }}
     - name: cheking remote before 
       run: |
@@ -28,7 +28,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: ashrafalih/RepoB  # Specifing the target repository
-        ref: main  # Specifing the branch or commit to checkout
+        # ref: main  # Specifing the branch or commit to checkout
         # token: ${{ secrets.PAT_TOKEN }}  # Providing the authentication if needed
     - name: Check remote repository after 
       run: |
