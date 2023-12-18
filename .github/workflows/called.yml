@@ -29,7 +29,7 @@ jobs:
       with:
         repository: ashrafalih/RepoB  # Specifing the target repository
         ref: main  # Specifing the branch or commit to checkout
-        token: ${{ secrets.PAT_TOKEN }}  # Providing the authentication if needed
+        # token: ${{ secrets.PAT_TOKEN }}  # Providing the authentication if needed
     - name: Check remote repository after 
       run: |
         git branch
