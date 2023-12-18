@@ -22,4 +22,12 @@ jobs:
       run: |
         git branch
         git remote -v
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        repository: ashrafalih/RepoB  # Specifing the target repository
+        ref: main  # Specifing the branch or commit to checkout
+        token: ${{ secrets.PAT_TOKEN }}  # Providing the authentication if needed
+    - name: Check remote repository
+      run: git remote -v
         
