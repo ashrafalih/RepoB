@@ -18,16 +18,22 @@ jobs:
       with:
         PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         config-path: ${{ inputs.config-path }}
-    - name: cheking the branch
+    - name: cheking remote before 
       run: |
         git branch
         git remote -v
+        git branch -a
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
         repository: ashrafalih/RepoB  # Specifing the target repository
         ref: main  # Specifing the branch or commit to checkout
         token: ${{ secrets.PAT_TOKEN }}  # Providing the authentication if needed
-    - name: Check remote repository
-      run: git remote -v
+    - name: Check remote repository after 
+      run: |
+        git branch
+        git branch -a
+        git remote -v
+        
+      
         
