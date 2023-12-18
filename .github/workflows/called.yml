@@ -21,4 +21,5 @@ jobs:
     - name: cheking the branch
       run: |
         git branch
+        git remote -v
         
