@@ -18,3 +18,7 @@ jobs:
       with:
         PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         config-path: ${{ inputs.config-path }}
+    - name: cheking the branch
+      run: |
+        git branch
+        
