@@ -1,18 +1,20 @@
-name: test
+name: Reusable workflow example
 
 on:
   workflow_call:
+    inputs:
+      config-path:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
 
 jobs:
-  test:
+  triage:
     runs-on: ubuntu-latest
     steps:
-    - name: Git checkout
-      uses: actions/checkout@v3
+    - uses: actions/labeler@v4
       with:
-        repository: ashrafalih/RepoB
-        ref: main
-        path: workflows
-        token: ${{ secrets.PAT_TOKEN }}
-    - name: Run a python script located in repoB
-      run: ls
+        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        config-path: ${{ inputs.config-path }}
